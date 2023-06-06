@@ -21,6 +21,10 @@ The algorithm using to calculate password hashes is as follows, an implementatio
 6. Xor the ciphered password with the hash of the salt
 7. Store xor result on the database
 
-The only step which is not reversible is the calculation of the sha512 hash, but we already know that its cleartext is the syscode xored with the operator id
-To properly implement this, first the salt should be appended to the password and the result should be hashed with sha512.\
+The only step which is not reversible is the calculation of the sha512 hash, but we already know that its cleartext is the syscode xored with the operator id.
+
+
+To properly implement this, first the salt should be appended to the password and the result should be hashed with sha512.
+
+
 The ciphering process with AES, its not adding more security as the password is always the same (stored in source code), I would suggest removing it altogether.
