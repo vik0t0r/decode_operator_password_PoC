@@ -12,7 +12,7 @@ Id: 2, Name: _PMS, log_username: xxxxxxxxxxxx, log_password: XXXXXXXXXXXXXXXXXXX
 ```
 Only users with password (ej: _PMS not) are recoverable
 # Explanation
-The algorithm using to calculate password hashes is as follows, an implementation can be found [here](fixme):
+The algorithm using to calculate password hashes is as follows, an implementation can be found [here](https://github.com/vik0t0r/decode_operator_password_PoC/blob/a13be00c620e9d734b71c5c6ae07c94f3bf4419b/decode_operator_password_PoC/CryptoUtils.cs#LL98C26-L98C26):
 1. Get syscode from db (Where it is ciphered with a static key found on the code)
 2. Calculate a salt Xoring the syscode with the id operator (I guess this is done to get a different salt for each operator)
 3. Convert the password string to a byte array, padded to 16 bytes
